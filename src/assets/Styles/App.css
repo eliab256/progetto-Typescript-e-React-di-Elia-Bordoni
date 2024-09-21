@@ -2,4 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(../Image/BackgroundHomepage.png);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
