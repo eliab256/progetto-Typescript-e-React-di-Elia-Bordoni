@@ -1,5 +1,5 @@
 import react from 'react'
-import { useSelector, UseSelector } from 'react-redux'
+import { useSelector, } from 'react-redux'
 import { RootState } from './Store'
 
 import StartingPage from "./Components/StartingPage"
@@ -9,11 +9,11 @@ import './assets/Styles/App.css'
 
 function App() {
 
-  const quizIsStarted = useSelector((state:RootState) => state.quizState.quizIsStarted);
+  const isQuizStarted = useSelector((state:RootState) => state.quizState.quizIsStarted);
 
   return (
     <div className='App'>
-      {!quizIsStarted ? <StartingPage /> : <QuizCard />}
+      {!isQuizStarted ? <StartingPage /> : <QuizCard />}
     
     </div>
   )

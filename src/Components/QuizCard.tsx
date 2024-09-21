@@ -4,7 +4,7 @@ const QuizCard: React.FC = () => {
 
     return(
         <div className="cardContainer">
-            
+            <h1>hello</h1>
         </div>
     );
 };
