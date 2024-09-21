@@ -6,4 +6,6 @@
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
+    max-height: 100%;
+    max-width: 100%;
 }
