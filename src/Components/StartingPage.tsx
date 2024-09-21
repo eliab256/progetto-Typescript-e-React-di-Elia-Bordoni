@@ -2,8 +2,16 @@ import "../assets/Styles/startingPage.css"
 import HeartGif from "../assets/Image/PlanetGif1920x1080.gif"
 import EcoQuiz from "../assets/Image/EcoQuiz.png"
 
+import { startQuiz } from "../Store/QuizState";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../Store";
 
-const StartingPage = () =>{
+
+const StartingPage: React.FC = () =>{
+
+    const dispatch: AppDispatch = useDispatch();
+
+    const handleStartQuiz = () => dispatch(startQuiz());
 
     return(
         <div className="startingPageContainer widthController">
@@ -26,7 +34,7 @@ const StartingPage = () =>{
                 <img alt="planet gif" src={HeartGif}></img>
             </div>
             <div className="startButton">
-                <button /*</div>onclick={}*/>Quiz Start</button>
+                <button onClick={handleStartQuiz}>Quiz Start</button>
             </div>
         </div>
     );
