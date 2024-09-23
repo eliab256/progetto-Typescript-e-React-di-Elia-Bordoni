@@ -1,6 +1,6 @@
-import "../assets/Styles/quizCard.css"
+import "../assets/Styles/quizPages.css"
 
-const QuizCard: React.FC = () => {
+const QuizPages: React.FC = () => {
 
     return(
         <div className="cardContainer">
@@ -9,4 +9,4 @@ const QuizCard: React.FC = () => {
     );
 };
 
-export default QuizCard;
+export default QuizPages;

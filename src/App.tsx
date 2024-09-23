@@ -1,9 +1,8 @@
-import react from 'react'
 import { useSelector, } from 'react-redux'
 import { RootState } from './Store'
 
 import StartingPage from "./Components/StartingPage"
-import QuizCard from "./Components/QuizCard"
+import QuizPages from "./Components/QuizPages"
 
 import './assets/Styles/App.css'
 
@@ -13,10 +12,11 @@ function App() {
 
   return (
     <div className='App'>
-      {!isQuizStarted ? <StartingPage /> : <QuizCard />}
-    
+      {!isQuizStarted ? <StartingPage /> : <QuizPages />}
     </div>
   )
 }
 
 export default App
+
+
