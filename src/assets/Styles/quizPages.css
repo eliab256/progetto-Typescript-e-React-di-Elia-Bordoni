@@ -1,4 +1,63 @@
 .cardContainer{
-    background-color: transparent;
-    border:  red solid 1px;
+    height: 100vh;
+    width: 100%;
+    padding-bottom: 3vh; 
+}
+
+.loadingBar{
+    height: 1vh;
+    width: 100%;
+    background: linear-gradient(to right,rgba(0, 135, 2)0%,rgb(0, 174, 3)10%,rgb(0, 115, 255)100%);
+    
+}
+
+.cardSection{
+    width: 100%;
+    height: 85vh;
+    border: solid 1px black; /*da togliere*/
+}
+
+.questionsButton{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.questionsButton button{
+    height: 100%;
+    width: 250px;
+    border-radius: 60px;
+    font-size: xx-large;
+    background: linear-gradient(45deg,rgb(0, 135, 2)0%,rgb(0, 174, 3)10%,rgb(0, 115, 255)100%) ;
+    border: black 2px solid;
+    color: white;
+}
+
+.questionsButton button:active{
+    box-shadow: inset 0px 0px 50px rgb(255, 255, 255);
+}
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    .questionsButton button{
+        height: 50px;
+        width: 160px;
+        border-radius: 40px;
+        font-size: x-large;
+        border: black 1px solid;    
+    }
+    
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  
 }
