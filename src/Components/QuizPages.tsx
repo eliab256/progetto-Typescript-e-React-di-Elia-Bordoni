@@ -1,25 +1,8 @@
 import "../assets/Styles/quizPages.css";
 import QuizCard from "./QuizCard";
+//import DataQuiz from "../Data/DataQuiz";
 
 const QuizPages: React.FC = () => {
-
-    interface QuizData {
-        question: string;
-        answers: [string,string,string,string];
-    }
-
-    const quizData: QuizData[] =[{
-        question: "What is recycling and why is it important?",
-        answers:[
-            "A way to reuse items without modifying them.",
-            "A process to transform waste materials into new products.",
-            "A technique for burning waste.",
-            "A method for burying waste."
-        ]
-    },
-    {}
-
-    ];
 
     return(
         <div className="cardContainer widthController">
