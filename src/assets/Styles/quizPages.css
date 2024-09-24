@@ -19,14 +19,14 @@
 
 .questionsButton{
     width: 100%;
-    height: 9vh;
+    height: 10vh;
     display: flex;
     justify-content:space-around;
     align-items: center;
 }
 
 .questionsButton button{
-    height: 100%;
+    height: 80%;
     width: 250px;
     border-radius: 60px;
     font-size: xx-large;

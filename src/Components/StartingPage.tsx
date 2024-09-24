@@ -2,7 +2,7 @@ import "../assets/Styles/startingPage.css"
 import HeartGif from "../assets/Image/PlanetGif1920x1080.gif"
 import EcoQuiz from "../assets/Image/EcoQuiz.png"
 
-import { startQuiz } from "../Store/QuizState";
+import { nextQuestion, startQuiz } from "../Store/QuizState";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../Store";
 
@@ -11,7 +11,10 @@ const StartingPage: React.FC = () =>{
 
     const dispatch: AppDispatch = useDispatch();
 
-    const handleStartQuiz = () => dispatch(startQuiz());
+    const handleStartQuiz = () => {
+        //dispatch(startQuiz());  //da utilizzare come condizione x non azzerare le domande 
+        dispatch(nextQuestion()); 
+    }
 
     return(
         <div className="startingPageContainer widthController">

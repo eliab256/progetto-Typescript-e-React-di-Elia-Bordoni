@@ -8,11 +8,11 @@ import './assets/Styles/App.css'
 
 function App() {
 
-  const isQuizStarted = useSelector((state:RootState) => state.quizState.quizIsStarted);
+  const QuestionNumber = useSelector((state:RootState) =>state.quizState.questionNum);
 
   return (
     <div className='App'>
-      {!isQuizStarted ? <StartingPage /> : <QuizPages />}
+      {(QuestionNumber == 0) ? <StartingPage /> : <QuizPages />}
     </div>
   )
 }
