@@ -12,7 +12,7 @@ const StartingPage: React.FC = () =>{
     const dispatch: AppDispatch = useDispatch();
 
     const handleStartQuiz = () => {
-        //dispatch(startQuiz());  //da utilizzare come condizione x non azzerare le domande 
+        dispatch(startQuiz());  //da utilizzare come condizione x non azzerare le domande 
         dispatch(nextQuestion()); 
     }
 

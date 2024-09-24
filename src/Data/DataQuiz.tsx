@@ -91,15 +91,6 @@ export interface QuizData {
             ],
           },
           {
-            question: "How can communities work together to improve waste management?",
-            answers: [
-              { text: "By organizing cleanup and recycling events.", correct: true },
-              { text: "By ignoring disposal regulations.", correct: false },
-              { text: "By producing more waste.", correct: false },
-              { text: "By not involving citizens.", correct: false },
-            ],
-          },
-          {
             question: "What is a negative effect of deforestation?",
             answers: [
               { text: "Increased oxygen production.", correct: false },
@@ -111,6 +102,8 @@ export interface QuizData {
 
 
     ];
+
+export const NumberOfQuestions = quizData.length +1;
 
 export default quizData;
 

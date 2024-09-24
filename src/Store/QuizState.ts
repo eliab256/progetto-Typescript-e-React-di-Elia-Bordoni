@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
+import {NumberOfQuestions} from "../Data/DataQuiz"
 
 interface QuizState {
     quizIsStarted: boolean,
@@ -25,10 +26,13 @@ const quizStateSlice = createSlice({
         },
 
         nextQuestion(state){
-            state.questionNum += 1
+            if(state.questionNum <=NumberOfQuestions){
+                state.questionNum += 1
+            } 
+            
         },
         prevQuestion(state){
-            if(state.questionNum >= 1){
+            if(state.questionNum > 1){
                 state.questionNum -= 1
             }
         }
