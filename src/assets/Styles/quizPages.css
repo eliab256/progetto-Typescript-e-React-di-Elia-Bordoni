@@ -14,7 +14,10 @@
 .cardSection{
     width: 100%;
     height: 85vh;
-    border: solid 1px black; /*da togliere*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .questionsButton{

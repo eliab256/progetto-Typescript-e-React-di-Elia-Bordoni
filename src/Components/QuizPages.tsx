@@ -29,7 +29,7 @@ const QuizPages: React.FC = () => {
         <div className="cardContainer widthController">
             <div className="loadingBar"></div>
             <div className="cardSection">
-                <QuizCard quiz={quizData[QuestionNumber]}/>
+                <QuizCard quiz={quizData[QuestionNumber-1]}/>
             </div>
             <div className="questionsButton">
                 <button onClick={handleGoBack}>Go back</button>
