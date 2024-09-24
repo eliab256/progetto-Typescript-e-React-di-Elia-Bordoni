@@ -11,7 +11,7 @@ import { nextQuestion, prevQuestion } from '../Store/QuizState';
 
 const QuizPages: React.FC = () => {
 
-    const isQuizStarted = useSelector((state:RootState) => state.quizState.quizIsStarted);
+//  const isQuizStarted = useSelector((state:RootState) => state.quizState.quizIsStarted);
     const QuestionNumber = useSelector((state:RootState) =>state.quizState.questionNum);
 
     const dispatch: AppDispatch = useDispatch();

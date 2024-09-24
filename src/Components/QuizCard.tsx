@@ -1,5 +1,7 @@
 import { QuizData } from "../Data/DataQuiz"
 
+import "../assets/Styles/QuizCard.css"
+
 interface QuizCardProps {
     quiz: QuizData;
 }

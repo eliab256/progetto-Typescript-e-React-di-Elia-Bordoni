@@ -1,6 +1,63 @@
 .card{
     display: flex;
-    height: 800px;
-    width: 400px;
-    background: linear-gradient(45deg,rgba(0, 135, 2, 0.8)0%,rgb(0, 174, 3,0.8)10%,rgb(0, 115, 255,0.8)100%);
+    flex-direction: column;
+    height: 70%;
+    width: 70%;
+    background: linear-gradient(45deg,rgba(0, 135, 2, 0.7)0%,rgb(0, 174, 3,0.7)10%,rgb(0, 115, 255,0.7)100%);
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    padding-top: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 40px;
+    font-size: x-large;
+}
+
+.question{
+    width: 100%;
+    height: 15% ;
+    margin-bottom: 5%;
+    border-bottom:  rgb(255, 255, 255) solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.answers{
+    width: 100%;
+    height: 20%;
+    display: flex;
+}
+
+.questionText{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.answerButton{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answerButton button{
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    border: 2px solid blue;
+}
+
+.answerButton button:hover{
+    background-color: rgba(72, 236, 72, 0.422);
+    border: 3px solid blue
+}
+
+.answerButton button:active{
+    background-color: rgb(72, 236, 72);
+    border: 3px solid blue
 }
