@@ -22,7 +22,6 @@ const quizStateSlice = createSlice({
         },
 
         endQuiz(state){
-            //aggiungere condizione che tutte le domande devono avere risposta
             state.quizIsEnded = true;
         },
 

@@ -103,7 +103,7 @@ export interface QuizData {
 
     ];
 
-export const NumberOfQuestions = quizData.length +1;
+export const NumberOfQuestions = quizData.length ;
 
 export default quizData;
 

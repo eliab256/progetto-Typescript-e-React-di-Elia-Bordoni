@@ -7,23 +7,38 @@ import "../assets/Styles/quizPages.css";
 import quizData, { NumberOfQuestions } from "../Data/DataQuiz";
 import QuizCard from "./QuizCard";
 import { endQuiz, nextQuestion, prevQuestion } from '../Store/QuizState';
+import { answerErrorIsNotThere, answerErrorIsThere } from '../Store/ErrorsState';
 
 
 const QuizPages: React.FC = () => {
 
     const QuestionNumber = useSelector((state:RootState) => state.quizState.questionNum);
     const TotalAnswer = useSelector((state:RootState) => state.AnswersCounter.TotalAnswersCounter )
+    const AnswerErrorState = useSelector((state:RootState) => state.DisplayError.displayTotAnswerError)
 
     const dispatch: AppDispatch = useDispatch();
 
     const handleGoBack = () => {
-        dispatch(prevQuestion());
+        if(AnswerErrorState){
+            dispatch(answerErrorIsNotThere());
+            dispatch(prevQuestion());
+        } else{
+            dispatch(prevQuestion());
+        }
+        console.log(TotalAnswer,QuestionNumber,NumberOfQuestions)
     };
 
     const handleNextQuestion = () => {
-        if(TotalAnswer == NumberOfQuestions ){
+        if(TotalAnswer === NumberOfQuestions && QuestionNumber === NumberOfQuestions ){
         dispatch(endQuiz());
-        } else {dispatch(nextQuestion());} 
+        } else if (QuestionNumber < NumberOfQuestions){
+            dispatch(nextQuestion());
+        } else if (TotalAnswer !== NumberOfQuestions && QuestionNumber === NumberOfQuestions){
+              if(!AnswerErrorState){
+                dispatch(answerErrorIsThere());
+              };
+        }
+        console.log(TotalAnswer,QuestionNumber,NumberOfQuestions)
     };
 
 
@@ -33,6 +48,11 @@ const QuizPages: React.FC = () => {
             <div className="cardSection">
                 <QuizCard quiz={quizData[QuestionNumber-1]}/>
             </div>
+            {AnswerErrorState && (
+                <div className='messageError'>
+                <p>Answer all the questions to proceed</p>
+             </div>
+            )}
             <div className="questionsButton">
                 <button onClick={handleGoBack}>Go back</button>
                 <button onClick={handleNextQuestion}>Next question</button>  
@@ -42,3 +62,4 @@ const QuizPages: React.FC = () => {
 };
 
 export default QuizPages;
+
