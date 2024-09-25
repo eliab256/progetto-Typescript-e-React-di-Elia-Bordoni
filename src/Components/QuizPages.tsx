@@ -25,7 +25,7 @@ const QuizPages: React.FC = () => {
         } else{
             dispatch(prevQuestion());
         }
-        console.log(TotalAnswer,QuestionNumber,NumberOfQuestions)
+        //console.log(TotalAnswer,QuestionNumber,NumberOfQuestions)
     };
 
     const handleNextQuestion = () => {
@@ -38,7 +38,7 @@ const QuizPages: React.FC = () => {
                 dispatch(answerErrorIsThere());
               };
         }
-        console.log(TotalAnswer,QuestionNumber,NumberOfQuestions)
+        //console.log(TotalAnswer,QuestionNumber,NumberOfQuestions)
     };
 
 
@@ -47,12 +47,13 @@ const QuizPages: React.FC = () => {
             <div className="loadingBar"></div>
             <div className="cardSection">
                 <QuizCard quiz={quizData[QuestionNumber-1]}/>
-            </div>
-            {AnswerErrorState && (
-                <div className='messageError'>
-                <p>Answer all the questions to proceed</p>
+                <div className={AnswerErrorState ? 'messageError' : "noMessageError"}>
+                {AnswerErrorState && (
+                <p>Answer all the questions to proceed</p>)}
              </div>
-            )}
+            
+            </div>
+           
             <div className="questionsButton">
                 <button onClick={handleGoBack}>Go back</button>
                 <button onClick={handleNextQuestion}>Next question</button>  

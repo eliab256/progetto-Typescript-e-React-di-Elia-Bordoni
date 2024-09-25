@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
 }
 
@@ -41,6 +42,35 @@
 .questionsButton button:active{
     box-shadow: inset 0px 0px 50px rgb(255, 255, 255);
 }
+
+.messageError{
+    margin-top: 2%;
+    display: flex;
+    color:red;
+    width: 70%;
+    height: 10%;
+    border: solid 1px red;
+    border-radius: 60px;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    animation: blinking 2s infinite;
+}
+
+.noMessageError{
+    margin-top: 2%;
+    width: 70%;
+    height: 10%;
+}
+
+  
+@keyframes blinking {
+    0% { background-color: white; }
+    50% { background-color: rgba(255, 0, 0, 0.811);
+          color: white }
+    100% { background-color: white; }
+  }
+
 
 
 /* Mobile Styles */
