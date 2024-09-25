@@ -1,8 +1,12 @@
 import { QuizData } from "../Data/DataQuiz"
 import { useSelector, } from 'react-redux'
 import { RootState } from '../Store'
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../Store";
+
 
 import "../assets/Styles/QuizCard.css"
+import { answerDone, rightAnswer } from "../Store/AnswersState";
 
 interface QuizCardProps {
     quiz: QuizData;
@@ -11,11 +15,17 @@ interface QuizCardProps {
 const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
 
     const QuestionNumber = useSelector((state:RootState) =>state.quizState.questionNum);
+    const dispatch: AppDispatch = useDispatch();
 
     const handleAnswerClick = (index: number) =>{
-        //se la var correct è true allora esegui questo dispatch che aumenta lo state risp esatte di +1
-        //se la risposta è errata non fare niente
+        const selectedAnswer = quiz.answers[index];
 
+        if(selectedAnswer.correct){
+            dispatch(rightAnswer());
+            dispatch(answerDone());
+        } else {
+            dispatch(answerDone());
+        }
     }
 
     return (
@@ -25,7 +35,7 @@ const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
             </div>
 
             {quiz.answers.map((text, index) =>(
-               <div className="answers">
+               <div key={index} className="answers">
                 <div className="questionText">
                     {text.text}
                 </div>
@@ -33,46 +43,9 @@ const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
                     <button onClick={() => handleAnswerClick(index)}></button>
                 </div> 
                 </div> 
-            ))}
-
-           
-            
+            ))} 
         </div>
     ) 
 }
 
 export default QuizCard;
-
-
-/*<div className="answers" id="answer1">
-<div className="questionText">
-    {quiz.answers[0].text}
-</div>
-<div className="answerButton">
-    <button onClick={}></button>
-</div> 
-</div>
-<div className="answers" id="answer1">
-<div className="questionText">
-    {quiz.answers[1].text}
-</div>
-<div className="answerButton">
-    <button onClick={}></button>
-</div> 
-</div>
-<div className="answers" id="answer1">
-<div className="questionText">
-    {quiz.answers[2].text}
-</div>
-<div className="answerButton">
-    <button onClick={}></button>
-</div> 
-</div>
-<div className="answers" id="answer1">
-<div className="questionText">
-    {quiz.answers[3].text}
-</div>
-<div className="answerButton">
-    <button onClick={}></button>
-</div> 
-</div> */

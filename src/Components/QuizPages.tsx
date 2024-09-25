@@ -4,14 +4,15 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../Store";
 
 import "../assets/Styles/quizPages.css";
-import quizData from "../Data/DataQuiz";
+import quizData, { NumberOfQuestions } from "../Data/DataQuiz";
 import QuizCard from "./QuizCard";
 import { endQuiz, nextQuestion, prevQuestion } from '../Store/QuizState';
 
 
 const QuizPages: React.FC = () => {
 
-    const QuestionNumber = useSelector((state:RootState) =>state.quizState.questionNum);
+    const QuestionNumber = useSelector((state:RootState) => state.quizState.questionNum);
+    const TotalAnswer = useSelector((state:RootState) => state.AnswersCounter.TotalAnswersCounter )
 
     const dispatch: AppDispatch = useDispatch();
 
@@ -20,8 +21,9 @@ const QuizPages: React.FC = () => {
     };
 
     const handleNextQuestion = () => {
-        dispatch(nextQuestion());
-        dispatch(endQuiz()); //aggiungere condizione che tutte le domande devono avere risposta
+        if(TotalAnswer == NumberOfQuestions ){
+        dispatch(endQuiz());
+        } else {dispatch(nextQuestion());} 
     };
 
 
