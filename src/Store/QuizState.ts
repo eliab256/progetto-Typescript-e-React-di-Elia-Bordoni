@@ -22,13 +22,14 @@ const quizStateSlice = createSlice({
         },
 
         endQuiz(state){
+            //aggiungere condizione che tutte le domande devono avere risposta
             state.quizIsEnded = true;
         },
 
         nextQuestion(state){
             if(state.questionNum <=NumberOfQuestions){
                 state.questionNum += 1
-            } 
+            }
             
         },
         prevQuestion(state){

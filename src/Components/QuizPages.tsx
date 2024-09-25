@@ -6,12 +6,11 @@ import { AppDispatch } from "../Store";
 import "../assets/Styles/quizPages.css";
 import quizData from "../Data/DataQuiz";
 import QuizCard from "./QuizCard";
-import { nextQuestion, prevQuestion } from '../Store/QuizState';
+import { endQuiz, nextQuestion, prevQuestion } from '../Store/QuizState';
 
 
 const QuizPages: React.FC = () => {
 
-//  const isQuizStarted = useSelector((state:RootState) => state.quizState.quizIsStarted);
     const QuestionNumber = useSelector((state:RootState) =>state.quizState.questionNum);
 
     const dispatch: AppDispatch = useDispatch();
@@ -22,6 +21,7 @@ const QuizPages: React.FC = () => {
 
     const handleNextQuestion = () => {
         dispatch(nextQuestion());
+        dispatch(endQuiz()); //aggiungere condizione che tutte le domande devono avere risposta
     };
 
 

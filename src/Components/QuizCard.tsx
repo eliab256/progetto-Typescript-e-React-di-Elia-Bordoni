@@ -1,4 +1,6 @@
 import { QuizData } from "../Data/DataQuiz"
+import { useSelector, } from 'react-redux'
+import { RootState } from '../Store'
 
 import "../assets/Styles/QuizCard.css"
 
@@ -8,10 +10,12 @@ interface QuizCardProps {
 
 const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
 
+    const QuestionNumber = useSelector((state:RootState) =>state.quizState.questionNum);
+
     return (
         <div className="card">
             <div className="question">
-                {quiz.question}  
+                {QuestionNumber}. {quiz.question} 
             </div>
             <div className="answers" id="answer1">
                 <div className="questionText">
