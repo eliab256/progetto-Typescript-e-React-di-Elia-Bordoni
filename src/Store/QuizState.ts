@@ -35,7 +35,8 @@ const quizStateSlice = createSlice({
             if(state.questionNum > 1){
                 state.questionNum -= 1
             }
-        }
+        },
+    
 
     }
 });

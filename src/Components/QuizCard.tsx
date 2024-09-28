@@ -6,7 +6,7 @@ import { AppDispatch } from "../Store";
 
 
 import "../assets/Styles/QuizCard.css"
-import { answerDone, rightAnswer } from "../Store/AnswersState";
+import { answerDone, rightAnswer, newAnswer, wrongAnswerChange } from "../Store/AnswersState";
 
 interface QuizCardProps {
     quiz: QuizData;
@@ -15,18 +15,30 @@ interface QuizCardProps {
 const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
 
     const QuestionNumber = useSelector((state:RootState) =>state.quizState.questionNum);
+    const isQuestionAnswered = useSelector((state:RootState) => state.AnswersState.isAnswered);
+    const isPrevAnswerCorrect = useSelector((state: RootState) => state.AnswersState.isAnsweredCorrect)
+
     const dispatch: AppDispatch = useDispatch();
 
     const handleAnswerClick = (index: number) =>{
         const selectedAnswer = quiz.answers[index];
 
-        if(selectedAnswer.correct){
+        if(selectedAnswer.correct && !isQuestionAnswered){
             dispatch(rightAnswer());
             dispatch(answerDone());
-        } else {
+            dispatch(newAnswer());
+        } else if(selectedAnswer.correct && isQuestionAnswered){
+            dispatch(rightAnswer());
+        } else if(!selectedAnswer.correct && !isQuestionAnswered){
             dispatch(answerDone());
+            dispatch(newAnswer());
+        } else if(!selectedAnswer.correct && isQuestionAnswered){
+            if(isPrevAnswerCorrect){
+                dispatch(wrongAnswerChange())
+            }
         }
-    }
+
+    } 
 
     return (
         <div className="card">

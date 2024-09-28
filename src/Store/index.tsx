@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit"
 import quizStateReducer from "./QuizState";
-import AnswersReducer from "./AnswersState";
 import DisplayErrorReducer from "./ErrorsState"
+import AnswersStateReducer from "./AnswersState";
 
 export  const store = configureStore({
     reducer:{
         quizState: quizStateReducer,
-        AnswersCounter: AnswersReducer,
+        AnswersState: AnswersStateReducer,
         DisplayError: DisplayErrorReducer,
     },
 

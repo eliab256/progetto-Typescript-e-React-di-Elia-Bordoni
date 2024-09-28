@@ -1,27 +1,41 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface AnswersCounterInt{
+interface AnswersStateInt{
     TotalAnswersCounter: number,
     RightAnswersCounter: number,
+    isAnswered: boolean,
+    isAnsweredCorrect: boolean,
 }
-const initialState:AnswersCounterInt = {
+const initialState:AnswersStateInt = {
     TotalAnswersCounter: 0,
     RightAnswersCounter: 0,
+    isAnswered: false,
+    isAnsweredCorrect: false,
 };
 
-const AnswersSlice = createSlice({
-    name: "AnswersCounter",
+const AnswersStateSlice = createSlice({
+    name: "AnswersState",
     initialState,
     reducers:{
         rightAnswer(state){
             state.RightAnswersCounter += 1;
+            state.isAnsweredCorrect == true;
         },
         answerDone(state){
             state.TotalAnswersCounter += 1;
+        },
+        newAnswer(state){
+            state.isAnswered == true;
+        },
+        wrongAnswerChange(state){
+            state.RightAnswersCounter -= 1;
+            state.isAnsweredCorrect == false;
+            
         }
+
     }
 });
 
 
-export const {rightAnswer, answerDone} = AnswersSlice.actions;
-export default AnswersSlice.reducer;
+export const {rightAnswer, answerDone, newAnswer, wrongAnswerChange} = AnswersStateSlice.actions;
+export default AnswersStateSlice.reducer;

@@ -13,7 +13,7 @@ import { answerErrorIsNotThere, answerErrorIsThere } from '../Store/ErrorsState'
 const QuizPages: React.FC = () => {
 
     const QuestionNumber = useSelector((state:RootState) => state.quizState.questionNum);
-    const TotalAnswer = useSelector((state:RootState) => state.AnswersCounter.TotalAnswersCounter )
+    const TotalAnswer = useSelector((state:RootState) => state.AnswersState.TotalAnswersCounter )
     const AnswerErrorState = useSelector((state:RootState) => state.DisplayError.displayTotAnswerError)
 
     const dispatch: AppDispatch = useDispatch();
@@ -25,7 +25,6 @@ const QuizPages: React.FC = () => {
         } else{
             dispatch(prevQuestion());
         }
-        //console.log(TotalAnswer,QuestionNumber,NumberOfQuestions)
     };
 
     const handleNextQuestion = () => {
@@ -38,7 +37,6 @@ const QuizPages: React.FC = () => {
                 dispatch(answerErrorIsThere());
               };
         }
-        //console.log(TotalAnswer,QuestionNumber,NumberOfQuestions)
     };
 
 
