@@ -51,7 +51,7 @@ const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
                 <div className="questionText">
                     {text.text}
                 </div>
-                <div className="answerButton">
+                <div className={`answerButton ${isQuestionAnswered ? "answerButtonClicked":""}`}>
                     <button onClick={() => handleAnswerClick(index)}></button>
                 </div> 
                 </div> 

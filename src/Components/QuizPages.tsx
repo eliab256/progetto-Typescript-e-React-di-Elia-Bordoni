@@ -12,13 +12,13 @@ import { answerErrorIsNotThere, answerErrorIsThere } from '../Store/ErrorsState'
 
 const QuizPages: React.FC = () => {
 
-    const QuestionNumber = useSelector((state:RootState) => state.quizState.questionNum);
-    const TotalAnswer = useSelector((state:RootState) => state.AnswersState.TotalAnswersCounter )
-    const AnswerErrorState = useSelector((state:RootState) => state.DisplayError.displayTotAnswerError)
+    const QuestionNumber: number = useSelector((state:RootState) => state.quizState.questionNum);
+    const TotalAnswer: number = useSelector((state:RootState) => state.AnswersState.TotalAnswersCounter )
+    const AnswerErrorState: boolean = useSelector((state:RootState) => state.DisplayError.displayTotAnswerError)
 
     const dispatch: AppDispatch = useDispatch();
 
-    const handleGoBack = () => {
+    const handleGoBack = (): void => {
         if(AnswerErrorState){
             dispatch(answerErrorIsNotThere());
             dispatch(prevQuestion());
@@ -27,7 +27,7 @@ const QuizPages: React.FC = () => {
         }
     };
 
-    const handleNextQuestion = () => {
+    const handleNextQuestion = (): void => {
         if(TotalAnswer === NumberOfQuestions && QuestionNumber === NumberOfQuestions ){
         dispatch(endQuiz());
         } else if (QuestionNumber < NumberOfQuestions){
@@ -39,10 +39,14 @@ const QuizPages: React.FC = () => {
         }
     };
 
+    const loadingPercentage = (QuestionNumber / NumberOfQuestions) * 100;
+
 
     return(
         <div className="cardContainer widthController">
-            <div className="loadingBar"></div>
+            <div className="loadingBar">
+                <div className='loadingBarState' style={{ width: `${loadingPercentage}%` }}></div>
+            </div>
             <div className="cardSection">
                 <QuizCard quiz={quizData[QuestionNumber-1]}/>
                 <div className={AnswerErrorState ? 'messageError' : "noMessageError"}>
