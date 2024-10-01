@@ -6,7 +6,7 @@ import { AppDispatch } from "../Store";
 
 
 import "../assets/Styles/QuizCard.css"
-import { answerDone, rightAnswer, newAnswer, wrongAnswerChange } from "../Store/AnswersState";
+import { answerDone, rightAnswer, newAnswer, wrongAnswerChange, setSelectedAnswer } from "../Store/AnswersState";
 
 interface QuizCardProps {
     quiz: QuizData;
@@ -19,10 +19,13 @@ const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
     const isPrevAnswerCorrect = useSelector((state: RootState) => state.AnswersState.isAnsweredCorrect);
     const CorrectAnswerNumber = useSelector((state: RootState) => state.AnswersState.RightAnswersCounter); //  serve solo x prova
     const TotalAnswerNumber = useSelector((state: RootState) => state.AnswersState.TotalAnswersCounter);   //  serve solo x prova
+    const selectedAnswerIndex = useSelector((state: RootState) => state.AnswersState.selectedAnswerIndex);
 
     const dispatch: AppDispatch = useDispatch();
 
     const handleAnswerClick = (index: number): void =>{
+
+        dispatch(setSelectedAnswer(index));
         const selectedAnswer = quiz.answers[index];
 
         if(selectedAnswer.correct && !isQuestionAnswered){    //risposta corretta && non era stata ancora selezionata la risposta
@@ -59,7 +62,7 @@ const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
                 <div className="questionText">
                     {text.text}
                 </div>
-                <div className={`answerButton ${isQuestionAnswered ? "answerButtonClicked":""}`}>
+                <div className={`answerButton ${selectedAnswerIndex === index ? "answerButtonClicked":""}`}>
                     <button onClick={() => handleAnswerClick(index)}></button>
                 </div> 
                 </div> 

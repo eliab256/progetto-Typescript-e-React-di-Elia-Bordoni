@@ -8,6 +8,7 @@ import EndingPage from './Components/EndingPage'
 import './assets/Styles/App.css'
 
 
+
 function App() {
 
   const QuestionNumber = useSelector((state:RootState) =>state.quizState.questionNum);
@@ -22,7 +23,11 @@ function App() {
       return <EndingPage />;
     }
     return null;
-  }
+  } 
+
+  /*  const renderPage = (): JSX.Element | null => {
+      return <EndingPage />;
+    } */
 
   return (
     <div className='App'>
