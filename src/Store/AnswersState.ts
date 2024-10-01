@@ -19,17 +19,18 @@ const AnswersStateSlice = createSlice({
     reducers:{
         rightAnswer(state){
             state.RightAnswersCounter += 1;
-            state.isAnsweredCorrect == true;
+            state.isAnsweredCorrect = true;
         },
         answerDone(state){
             state.TotalAnswersCounter += 1;
+           
         },
         newAnswer(state){
-            state.isAnswered == true;
+            state.isAnswered = true;
         },
         wrongAnswerChange(state){
             state.RightAnswersCounter -= 1;
-            state.isAnsweredCorrect == false;
+            state.isAnsweredCorrect = false;
             
         }
 

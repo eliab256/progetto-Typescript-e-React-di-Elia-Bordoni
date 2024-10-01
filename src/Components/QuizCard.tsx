@@ -30,13 +30,15 @@ const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
             dispatch(answerDone());    //counter risposte totali +1
             dispatch(newAnswer());     //stato "is Answered" diventa true
         } else if(selectedAnswer.correct && isQuestionAnswered){  //risposta corretta && ma era già stata selezionata la risposta
-            dispatch(rightAnswer());
+            if(!isPrevAnswerCorrect){       //se la precedente risposta non era corretta allora metti +1 al counter delle corrette, altrimenti non fare niente
+                dispatch(rightAnswer());
+            }
         } else if(!selectedAnswer.correct && !isQuestionAnswered){ //risposta errata && non era stata ancora selezionata la risposta
             dispatch(answerDone());
             dispatch(newAnswer());
         } else if(!selectedAnswer.correct && isQuestionAnswered){  //risposta errata && era già stata selezionata la risposta
             if(isPrevAnswerCorrect){
-                dispatch(wrongAnswerChange())
+                dispatch(wrongAnswerChange()) //quando la risp precendete era corretta e selezioni una nuova sbagliata: counter risp corrette -1, stato isAnsweredCorrect diventa false
             }
         }
 
