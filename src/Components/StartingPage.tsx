@@ -11,7 +11,7 @@ const StartingPage: React.FC = () =>{
 
     const dispatch: AppDispatch = useDispatch();
 
-    const handleStartQuiz = () => {
+    const handleStartQuiz = (): void => {
         dispatch(nextQuestion()); 
     }
 
