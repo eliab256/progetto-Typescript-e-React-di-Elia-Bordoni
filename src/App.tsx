@@ -25,9 +25,11 @@ function App() {
     return null;
   } 
 
-  /*  const renderPage = (): JSX.Element | null => {
+  
+ /*   const renderPage = (): JSX.Element | null => {
       return <EndingPage />;
     } */
+
 
   return (
     <div className='App'>

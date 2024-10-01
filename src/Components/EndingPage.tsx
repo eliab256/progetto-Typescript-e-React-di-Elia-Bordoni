@@ -1,10 +1,18 @@
 import { useSelector, } from 'react-redux'
 import { RootState } from '../Store'
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../Store";
+import "../assets/Styles/EndingPage.css"
+import { resetAnswersState } from '../Store/AnswersState';
+import { resetErrorState } from '../Store/ErrorsState';
+import { resetQuizState } from '../Store/QuizState';
 
 const EndingPage: React.FC = () =>{
 
     const CorrectAnswerNumber = useSelector((state: RootState) => state.AnswersState.RightAnswersCounter); 
-    const TotalAnswerNumber = useSelector((state: RootState) => state.AnswersState.TotalAnswersCounter);   
+    const TotalAnswerNumber = useSelector((state: RootState) => state.AnswersState.TotalAnswersCounter);  
+    
+    const dispatch: AppDispatch = useDispatch();
 
     const PercentResult = (): number => {
         if (TotalAnswerNumber === 0) {
@@ -26,6 +34,13 @@ const EndingPage: React.FC = () =>{
         }
     }
 
+    const handleRestartClick = (): void => {
+        dispatch(resetAnswersState());
+        dispatch(resetErrorState());
+        dispatch(resetQuizState());
+    }
+
+
     return(
         <div className="endingPageContainer widthController">
             <div className='testResult'>
@@ -37,6 +52,10 @@ const EndingPage: React.FC = () =>{
             <div className='resultComment'>
                 {CongratsMessage(PercentResult())}
             </div>
+            <div className="restartButton">
+                <button onClick={handleRestartClick}>Restart Quiz</button>
+            </div>
+            
         </div>
 
     );

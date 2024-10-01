@@ -17,9 +17,10 @@ const DisplayErrorSlice = createSlice({
         },
         answerErrorIsNotThere(state){
             state.displayTotAnswerError = false;
-        }
+        },
+        resetErrorState: () => initialState,
     }
 })
 
-export const {answerErrorIsThere, answerErrorIsNotThere} = DisplayErrorSlice.actions;
+export const {answerErrorIsThere, answerErrorIsNotThere, resetErrorState} = DisplayErrorSlice.actions;
 export default DisplayErrorSlice.reducer;

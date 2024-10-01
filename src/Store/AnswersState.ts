@@ -38,10 +38,11 @@ const AnswersStateSlice = createSlice({
         setSelectedAnswer(state, action: PayloadAction<number | null>) {
             state.selectedAnswerIndex = action.payload;
         },
+        resetAnswersState: () => initialState,
 
     }
 });
 
 
-export const {rightAnswer, answerDone, newAnswer, wrongAnswerChange, setSelectedAnswer} = AnswersStateSlice.actions;
+export const {rightAnswer, answerDone, newAnswer, wrongAnswerChange, setSelectedAnswer, resetAnswersState} = AnswersStateSlice.actions;
 export default AnswersStateSlice.reducer;
