@@ -11,15 +11,18 @@ import './assets/Styles/App.css'
 
 function App() {
 
-  const QuestionNumber = useSelector((state:RootState) =>state.quizState.questionNum);
+  const StartingQuiz = useSelector((state:RootState) =>state.quizState.quizIsStarted);
   const EndingQuiz = useSelector((state:RootState) => state.quizState.quizIsEnded);
 
+  console.log(StartingQuiz);
+
+
   const renderPage = (): JSX.Element | null => {
-    if(QuestionNumber == 0 && !EndingQuiz){
+    if(!StartingQuiz && !EndingQuiz){
       return <StartingPage />;
-    } else if (QuestionNumber > 0 && !EndingQuiz){
+    } else if (StartingQuiz && !EndingQuiz){
       return <QuizPages />;
-    } else if (EndingQuiz){
+    } else if (StartingQuiz && EndingQuiz){
       return <EndingPage />;
     }
     return null;

@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
-import {NumberOfQuestions} from "../Data/DataQuiz"
+
 
 interface QuizState {
     quizIsStarted: boolean,
@@ -10,7 +10,7 @@ interface QuizState {
 const initialState: QuizState = {
     quizIsStarted: false,
     quizIsEnded: false,
-    questionNum: 0,
+    questionNum: 1,
 };
 
 const quizStateSlice = createSlice({
@@ -24,17 +24,8 @@ const quizStateSlice = createSlice({
         endQuiz(state){
             state.quizIsEnded = true;
         },
-
         nextQuestion(state){
-            if(state.questionNum <=NumberOfQuestions){
-                state.questionNum += 1
-            }
-            
-        },
-        prevQuestion(state){
-            if(state.questionNum > 1){
-                state.questionNum -= 1
-            }
+            state.questionNum += 1
         },
         resetQuizState: () => initialState,
     
@@ -42,5 +33,5 @@ const quizStateSlice = createSlice({
     }
 });
 
-export const {startQuiz, endQuiz, nextQuestion, prevQuestion, resetQuizState} = quizStateSlice.actions;
+export const {startQuiz, endQuiz, resetQuizState, nextQuestion} = quizStateSlice.actions;
 export default quizStateSlice.reducer;

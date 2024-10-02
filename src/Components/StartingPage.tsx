@@ -2,7 +2,7 @@ import "../assets/Styles/startingPage.css"
 import HeartGif from "../assets/Image/PlanetGif1920x1080.gif"
 import EcoQuiz from "../assets/Image/EcoQuiz.png"
 
-import { nextQuestion } from "../Store/QuizState";
+import { startQuiz } from "../Store/QuizState";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../Store";
 
@@ -12,7 +12,7 @@ const StartingPage: React.FC = () =>{
     const dispatch: AppDispatch = useDispatch();
 
     const handleStartQuiz = (): void => {
-        dispatch(nextQuestion()); 
+        dispatch(startQuiz()); 
     }
 
     return(

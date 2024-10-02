@@ -6,11 +6,12 @@ import "../assets/Styles/EndingPage.css"
 import { resetAnswersState } from '../Store/AnswersState';
 import { resetErrorState } from '../Store/ErrorsState';
 import { resetQuizState } from '../Store/QuizState';
+import quizData from '../Data/DataQuiz';
 
 const EndingPage: React.FC = () =>{
 
     const CorrectAnswerNumber = useSelector((state: RootState) => state.AnswersState.RightAnswersCounter); 
-    const TotalAnswerNumber = useSelector((state: RootState) => state.AnswersState.TotalAnswersCounter);  
+    const TotalAnswerNumber = quizData.length;  
     
     const dispatch: AppDispatch = useDispatch();
 

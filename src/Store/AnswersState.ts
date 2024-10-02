@@ -23,16 +23,11 @@ const AnswersStateSlice = createSlice({
             state.RightAnswersCounter += 1;
             state.isAnsweredCorrect = true;
         },
-        answerDone(state){
-            state.TotalAnswersCounter += 1;
-           
-        },
         newAnswer(state){
             state.isAnswered = true;
         },
         wrongAnswerChange(state){
             state.RightAnswersCounter -= 1;
-            state.isAnsweredCorrect = false;
             
         },
         setSelectedAnswer(state, action: PayloadAction<number | null>) {
@@ -44,5 +39,5 @@ const AnswersStateSlice = createSlice({
 });
 
 
-export const {rightAnswer, answerDone, newAnswer, wrongAnswerChange, setSelectedAnswer, resetAnswersState} = AnswersStateSlice.actions;
+export const {rightAnswer, newAnswer, wrongAnswerChange, setSelectedAnswer, resetAnswersState} = AnswersStateSlice.actions;
 export default AnswersStateSlice.reducer;
