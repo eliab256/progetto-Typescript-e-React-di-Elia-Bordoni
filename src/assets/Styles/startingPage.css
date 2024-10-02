@@ -35,9 +35,12 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 25px;
+    display: flex;
     text-align: justify;
     align-content: center;
+    align-items: center;
 }
+
 
 .planetGif{
     width: 100%;
@@ -80,7 +83,7 @@
 @media only screen and (max-width: 400px) {
 
     .quizDescription{
-        font-size: 12px;
+        font-size: clamp(12px, 14px, 16px);
     }
 
     .planetGif img{
@@ -99,7 +102,7 @@
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
     .quizDescription{
-        font-size: 15px;
+        font-size: 16px;
     } 
 }
 

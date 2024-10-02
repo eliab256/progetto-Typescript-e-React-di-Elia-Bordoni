@@ -93,11 +93,41 @@
         font-size: x-large;
         border: black 1px solid;    
     }
-    
+
+    .messageError{
+        width: 70%;
+        height: 6%;
+        font-size: 20px;
+    }
+
+    .noMessageError{
+        width: 70%;
+        height: 6%;
+    }
+
+    .loadingBar{
+        width: 96%;
+        margin: 0 auto;
+    }
+
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
+
+    .messageError{
+        width: 70%;
+        font-size: 20px;
+    }
+    
+    .noMessageError{
+        width: 70%;
+    }
+
+    .loadingBar{
+        width: 96%;
+        margin: 0 auto;
+    }
     
 }
 

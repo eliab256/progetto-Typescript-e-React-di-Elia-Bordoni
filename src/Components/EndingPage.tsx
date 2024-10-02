@@ -7,6 +7,7 @@ import { resetAnswersState } from '../Store/AnswersState';
 import { resetErrorState } from '../Store/ErrorsState';
 import { resetQuizState } from '../Store/QuizState';
 import quizData from '../Data/DataQuiz';
+import HeartGif from "../assets/Image/PlanetGif1920x1080.gif"
 
 const EndingPage: React.FC = () =>{
 
@@ -52,6 +53,9 @@ const EndingPage: React.FC = () =>{
             </div>
             <div className='resultComment'>
                 {CongratsMessage(PercentResult())}
+            </div>
+            <div className="planetGif">
+                <img alt="planet gif" src={HeartGif}></img>
             </div>
             <div className="restartButton">
                 <button onClick={handleRestartClick}>Restart Quiz</button>

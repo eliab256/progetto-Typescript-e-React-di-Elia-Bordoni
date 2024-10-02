@@ -11,6 +11,7 @@ import { nextQuestion } from '../Store/AnswersState';
 import { answerErrorIsThere } from '../Store/ErrorsState';
 
 
+
 const QuizPages: React.FC = () => {
 
     const QuestionNumber: number = useSelector((state:RootState) => state.quizState.questionNum);
@@ -20,13 +21,16 @@ const QuizPages: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
 
     const handleNextQuestion = (): void => {
-        if(QuestionNumber === NumberOfQuestions ){
+
+        if(QuestionNumber === NumberOfQuestions && isQuestionAnswered){
         dispatch(endQuiz());
         } else if(isQuestionAnswered){
             dispatch(questionNumber());
             dispatch(nextQuestion());
             
-        } else{answerErrorIsThere}
+        } else if(!isQuestionAnswered){
+            dispatch(answerErrorIsThere());
+        }
     };
 
     const loadingPercentage = (QuestionNumber / NumberOfQuestions) * 100;

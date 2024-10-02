@@ -4,9 +4,9 @@ import { RootState } from '../Store'
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../Store";
 
-
 import "../assets/Styles/QuizCard.css"
 import { rightAnswer, newAnswer, wrongAnswerChange, setSelectedAnswer, } from "../Store/AnswersState";
+import { answerErrorIsNotThere } from '../Store/ErrorsState';
 
 interface QuizCardProps {
     quiz: QuizData;
@@ -19,6 +19,7 @@ const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
     const isPrevAnswerCorrect = useSelector((state: RootState) => state.AnswersState.isAnsweredCorrect);
     const CorrectAnswerNumber = useSelector((state: RootState) => state.AnswersState.RightAnswersCounter); //  serve solo x prova
     const selectedAnswerIndex = useSelector((state: RootState) => state.AnswersState.selectedAnswerIndex);
+    const AnswerErrorState: boolean = useSelector((state:RootState) => state.DisplayError.displayTotAnswerError)
 
     const dispatch: AppDispatch = useDispatch();
 
@@ -38,8 +39,12 @@ const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
             dispatch(newAnswer());
         } else if(!selectedAnswer.correct && isQuestionAnswered){  //risposta errata && era già stata selezionata la risposta
             if(isPrevAnswerCorrect){
-                dispatch(wrongAnswerChange()) //quando la risp precendete era corretta e selezioni una nuova sbagliata: counter risp corrette -1, stato isAnsweredCorrect diventa false
+                dispatch(wrongAnswerChange()); //quando la risp precendete era corretta e selezioni una nuova sbagliata: counter risp corrette -1, stato isAnsweredCorrect diventa false
             }
+        };
+
+        if(AnswerErrorState){
+            dispatch(answerErrorIsNotThere());
         }
 
        
