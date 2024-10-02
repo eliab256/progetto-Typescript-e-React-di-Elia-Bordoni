@@ -1,14 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface AnswersStateInt{
-    TotalAnswersCounter: number,
     RightAnswersCounter: number,
     isAnswered: boolean,
     isAnsweredCorrect: boolean,
     selectedAnswerIndex: number | null,
 }
 const initialState:AnswersStateInt = {
-    TotalAnswersCounter: 0,
     RightAnswersCounter: 0,
     isAnswered: false,
     isAnsweredCorrect: false,
@@ -27,8 +25,10 @@ const AnswersStateSlice = createSlice({
             state.isAnswered = true;
         },
         wrongAnswerChange(state){
-            state.RightAnswersCounter -= 1;
-            
+            state.RightAnswersCounter -= 1;  
+        },
+        nextQuestion(state){
+            state.isAnswered = false;
         },
         setSelectedAnswer(state, action: PayloadAction<number | null>) {
             state.selectedAnswerIndex = action.payload;
@@ -39,5 +39,5 @@ const AnswersStateSlice = createSlice({
 });
 
 
-export const {rightAnswer, newAnswer, wrongAnswerChange, setSelectedAnswer, resetAnswersState} = AnswersStateSlice.actions;
+export const {rightAnswer, newAnswer, wrongAnswerChange, nextQuestion ,setSelectedAnswer, resetAnswersState} = AnswersStateSlice.actions;
 export default AnswersStateSlice.reducer;

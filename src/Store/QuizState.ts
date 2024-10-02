@@ -24,7 +24,7 @@ const quizStateSlice = createSlice({
         endQuiz(state){
             state.quizIsEnded = true;
         },
-        nextQuestion(state){
+        questionNumber(state){
             state.questionNum += 1
         },
         resetQuizState: () => initialState,
@@ -33,5 +33,5 @@ const quizStateSlice = createSlice({
     }
 });
 
-export const {startQuiz, endQuiz, resetQuizState, nextQuestion} = quizStateSlice.actions;
+export const {startQuiz, endQuiz, resetQuizState, questionNumber} = quizStateSlice.actions;
 export default quizStateSlice.reducer;

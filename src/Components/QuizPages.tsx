@@ -6,8 +6,9 @@ import { AppDispatch } from "../Store";
 import "../assets/Styles/quizPages.css";
 import quizData, { NumberOfQuestions } from "../Data/DataQuiz";
 import QuizCard from "./QuizCard";
-import { endQuiz, nextQuestion } from '../Store/QuizState';
-import { answerErrorIsNotThere, answerErrorIsThere } from '../Store/ErrorsState';
+import { endQuiz, questionNumber } from '../Store/QuizState';
+import { nextQuestion } from '../Store/AnswersState';
+import { answerErrorIsThere } from '../Store/ErrorsState';
 
 
 const QuizPages: React.FC = () => {
@@ -22,7 +23,9 @@ const QuizPages: React.FC = () => {
         if(QuestionNumber === NumberOfQuestions ){
         dispatch(endQuiz());
         } else if(isQuestionAnswered){
+            dispatch(questionNumber());
             dispatch(nextQuestion());
+            
         } else{answerErrorIsThere}
     };
 

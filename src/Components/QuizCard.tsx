@@ -6,7 +6,7 @@ import { AppDispatch } from "../Store";
 
 
 import "../assets/Styles/QuizCard.css"
-import { rightAnswer, newAnswer, wrongAnswerChange, setSelectedAnswer } from "../Store/AnswersState";
+import { rightAnswer, newAnswer, wrongAnswerChange, setSelectedAnswer, } from "../Store/AnswersState";
 
 interface QuizCardProps {
     quiz: QuizData;
@@ -61,7 +61,7 @@ const QuizCard: React.FC<QuizCardProps> = ({quiz}) =>{
                 <div className="questionText">
                     {text.text}
                 </div>
-                <div className={`answerButton ${selectedAnswerIndex === index ? "answerButtonClicked":""}`}>
+                <div className={`answerButton ${(selectedAnswerIndex === index && isQuestionAnswered) ? "answerButtonClicked":""}`}>
                     <button onClick={() => handleAnswerClick(index)}></button>
                 </div> 
                 </div> 
