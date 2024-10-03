@@ -14,10 +14,15 @@ const QuizPages: React.FC = () => {
     const QuestionNumber: number = useSelector((state: RootState) => state.quizState.questionNum);
     const AnswerErrorState: boolean = useSelector((state: RootState) => state.DisplayError.displayTotAnswerError);
     const isQuestionAnswered = useSelector((state: RootState) => state.AnswersState.isAnswered);
+    const isPrevAnswerCorrect = useSelector((state: RootState) => state.AnswersState.isAnsweredCorrect);
 
     const dispatch: AppDispatch = useDispatch();
 
     const handleNextQuestion = (): void => {
+        if (isPrevAnswerCorrect) {
+            !isPrevAnswerCorrect;
+        }
+
         if (QuestionNumber === NumberOfQuestions && isQuestionAnswered) {
             dispatch(endQuiz());
         } else if (isQuestionAnswered) {

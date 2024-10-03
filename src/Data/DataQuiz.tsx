@@ -13,9 +13,9 @@ const quizData: QuizData[] = [
         question: 'What is recycling and why is it important?',
         answers: [
             { text: 'A way to reuse items without modifying them.', correct: false },
-            { text: 'A process to transform waste materials into new products.', correct: true },
             { text: 'A technique for burning waste.', correct: false },
             { text: 'A method for burying waste.', correct: false },
+            { text: 'A process to transform waste materials into new products.', correct: true },
         ],
     },
     {

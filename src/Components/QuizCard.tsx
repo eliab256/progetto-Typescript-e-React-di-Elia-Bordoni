@@ -15,7 +15,7 @@ const QuizCard: React.FC<QuizCardProps> = ({ quiz }) => {
     const QuestionNumber = useSelector((state: RootState) => state.quizState.questionNum);
     const isQuestionAnswered = useSelector((state: RootState) => state.AnswersState.isAnswered);
     const isPrevAnswerCorrect = useSelector((state: RootState) => state.AnswersState.isAnsweredCorrect);
-    const CorrectAnswerNumber = useSelector((state: RootState) => state.AnswersState.RightAnswersCounter); //  serve solo x prova
+
     const selectedAnswerIndex = useSelector((state: RootState) => state.AnswersState.selectedAnswerIndex);
     const AnswerErrorState: boolean = useSelector((state: RootState) => state.DisplayError.displayTotAnswerError);
 
@@ -48,9 +48,6 @@ const QuizCard: React.FC<QuizCardProps> = ({ quiz }) => {
         if (AnswerErrorState) {
             dispatch(answerErrorIsNotThere());
         }
-
-        console.log(`QuestionNumber: ${QuestionNumber}, CorrectAnswerNumber: ${CorrectAnswerNumber}, 
-            selectedAnswer.correct: ${selectedAnswer.correct}, isQuestionAnswered: ${isQuestionAnswered}, PrevAnswerCorrect: ${isPrevAnswerCorrect}`);
     };
 
     return (

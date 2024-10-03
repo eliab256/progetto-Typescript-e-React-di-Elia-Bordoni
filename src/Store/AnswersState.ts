@@ -26,6 +26,7 @@ const AnswersStateSlice = createSlice({
         },
         wrongAnswerChange(state) {
             state.RightAnswersCounter -= 1;
+            state.isAnsweredCorrect = false;
         },
         nextQuestion(state) {
             state.isAnswered = false;
