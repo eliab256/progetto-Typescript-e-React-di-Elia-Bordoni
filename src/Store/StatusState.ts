@@ -1,32 +1,31 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-interface statusStateInt{
-    isLoading: boolean,
-    error: string,
-};
+interface statusStateInt {
+    isLoading: boolean;
+    error: string;
+}
 
-const initialState:statusStateInt = {
+const initialState: statusStateInt = {
     isLoading: false,
-    error:"",
+    error: '',
 };
 
 export const statusStateSlice = createSlice({
-    name:"status",
+    name: 'status',
     initialState,
-    reducers:{
+    reducers: {
         setLoading: (state, action) => {
             state.isLoading = action.payload;
         },
         setError: (state, action) => {
             state.error = action.payload;
         },
-        resetStatus: (state) => {
+        resetStatus: state => {
             state.isLoading = false;
-            state.error = "";
+            state.error = '';
         },
-    }
+    },
+});
 
-})
-
-export const {setLoading, setError, resetStatus} = statusStateSlice.actions;
+export const { setLoading, setError, resetStatus } = statusStateSlice.actions;
 export default statusStateSlice.reducer;

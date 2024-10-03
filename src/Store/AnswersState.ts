@@ -1,12 +1,12 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface AnswersStateInt{
-    RightAnswersCounter: number,
-    isAnswered: boolean,
-    isAnsweredCorrect: boolean,
-    selectedAnswerIndex: number | null,
+interface AnswersStateInt {
+    RightAnswersCounter: number;
+    isAnswered: boolean;
+    isAnsweredCorrect: boolean;
+    selectedAnswerIndex: number | null;
 }
-const initialState:AnswersStateInt = {
+const initialState: AnswersStateInt = {
     RightAnswersCounter: 0,
     isAnswered: false,
     isAnsweredCorrect: false,
@@ -14,30 +14,29 @@ const initialState:AnswersStateInt = {
 };
 
 const AnswersStateSlice = createSlice({
-    name: "AnswersState",
+    name: 'AnswersState',
     initialState,
-    reducers:{
-        rightAnswer(state){
+    reducers: {
+        rightAnswer(state) {
             state.RightAnswersCounter += 1;
             state.isAnsweredCorrect = true;
         },
-        newAnswer(state){
+        newAnswer(state) {
             state.isAnswered = true;
         },
-        wrongAnswerChange(state){
-            state.RightAnswersCounter -= 1;  
+        wrongAnswerChange(state) {
+            state.RightAnswersCounter -= 1;
         },
-        nextQuestion(state){
+        nextQuestion(state) {
             state.isAnswered = false;
         },
         setSelectedAnswer(state, action: PayloadAction<number | null>) {
             state.selectedAnswerIndex = action.payload;
         },
         resetAnswersState: () => initialState,
-
-    }
+    },
 });
 
-
-export const {rightAnswer, newAnswer, wrongAnswerChange, nextQuestion ,setSelectedAnswer, resetAnswersState} = AnswersStateSlice.actions;
+export const { rightAnswer, newAnswer, wrongAnswerChange, nextQuestion, setSelectedAnswer, resetAnswersState } =
+    AnswersStateSlice.actions;
 export default AnswersStateSlice.reducer;

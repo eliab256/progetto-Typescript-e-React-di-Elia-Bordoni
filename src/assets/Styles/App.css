@@ -1,23 +1,29 @@
-.App{
+.App {
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url(../Image/BackgroundHomepage.png);
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     max-height: 100%;
     max-width: 100%;
 }
 
-.loadingMessage{
+.loadingMessage {
     font-size: xx-large;
     justify-content: center;
     animation: blinking 1s infinite;
 }
 
 @keyframes blinking {
-    0% {color: black; }
-    50% { color: red(255, 0, 0, 0.811);}
-    100% {color: black; }
-  }
+    0% {
+        color: black;
+    }
+    50% {
+        color: red(255, 0, 0, 0.811);
+    }
+    100% {
+        color: black;
+    }
+}

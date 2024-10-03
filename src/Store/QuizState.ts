@@ -1,10 +1,9 @@
-import {createSlice} from "@reduxjs/toolkit"
-
+import { createSlice } from '@reduxjs/toolkit';
 
 interface QuizState {
-    quizIsStarted: boolean,
-    quizIsEnded: boolean,
-    questionNum: number,
+    quizIsStarted: boolean;
+    quizIsEnded: boolean;
+    questionNum: number;
 }
 
 const initialState: QuizState = {
@@ -14,24 +13,22 @@ const initialState: QuizState = {
 };
 
 const quizStateSlice = createSlice({
-    name: "quizState",
+    name: 'quizState',
     initialState,
-    reducers:{
-        startQuiz(state){
+    reducers: {
+        startQuiz(state) {
             state.quizIsStarted = true;
         },
 
-        endQuiz(state){
+        endQuiz(state) {
             state.quizIsEnded = true;
         },
-        questionNumber(state){
-            state.questionNum += 1
+        questionNumber(state) {
+            state.questionNum += 1;
         },
         resetQuizState: () => initialState,
-    
-
-    }
+    },
 });
 
-export const {startQuiz, endQuiz, resetQuizState, questionNumber} = quizStateSlice.actions;
+export const { startQuiz, endQuiz, resetQuizState, questionNumber } = quizStateSlice.actions;
 export default quizStateSlice.reducer;

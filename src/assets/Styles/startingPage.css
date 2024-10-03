@@ -1,4 +1,4 @@
-.startingPageContainer{
+.startingPageContainer {
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,10 +6,10 @@
     justify-items: center;
     height: 100vh;
     padding-bottom: 3vh;
-    padding-top: 3vh;   
+    padding-top: 3vh;
 }
 
-.title{
+.title {
     width: 100%;
     height: 8vh;
     display: flex;
@@ -17,18 +17,18 @@
     justify-content: center;
 }
 
-.title img{
+.title img {
     width: 80%;
     object-fit: contain;
 }
 
-.quizDescription{
+.quizDescription {
     height: 35vh;
-    border:  white solid 1px;
+    border: white solid 1px;
     border-radius: 30px;
     margin-left: 10%;
     margin-right: 10%;
-    background: linear-gradient(45deg,rgba(0, 135, 2, 0.8)0%,rgb(0, 174, 3,0.8)10%,rgb(0, 115, 255,0.8)100%);
+    background: linear-gradient(45deg, rgba(0, 135, 2, 0.8) 0%, rgb(0, 174, 3, 0.8) 10%, rgb(0, 115, 255, 0.8) 100%);
     color: white;
     padding-left: 5%;
     padding-right: 5%;
@@ -41,78 +41,74 @@
     align-items: center;
 }
 
-
-.planetGif{
+.planetGif {
     width: 100%;
     height: 35vh;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
-.planetGif img{
+.planetGif img {
     height: 120%;
     object-fit: contain;
     margin-left: -35px;
 }
 
-.startButton{
+.startButton {
     width: 100%;
     height: 9vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2vh
+    margin-top: 2vh;
 }
 
-.startButton button{
+.startButton button {
     height: 100%;
     width: 250px;
     border-radius: 60px;
     font-size: xx-large;
-    background: linear-gradient(45deg,rgb(0, 135, 2)0%,rgb(0, 174, 3)10%,rgb(0, 115, 255)100%) ;
+    background: linear-gradient(45deg, rgb(0, 135, 2) 0%, rgb(0, 174, 3) 10%, rgb(0, 115, 255) 100%);
     border: black 2px solid;
     color: white;
 }
 
-.startButton button:active{
+.startButton button:active {
     box-shadow: inset 0px 0px 50px rgb(255, 255, 255);
 }
 
-
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
-
-    .quizDescription{
+    .quizDescription {
         height: 40vh;
         font-size: 14px;
     }
 
-    .planetGif img{
+    .planetGif img {
         margin-left: -4%;
     }
 
-    .planetGif{
+    .planetGif {
         height: 30vh;
     }
- 
-    .startButton button{
+
+    .startButton button {
         height: 50px;
         width: 160px;
         border-radius: 40px;
         font-size: x-large;
-        border: black 1px solid;    
+        border: black 1px solid;
     }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
-    .quizDescription{
+    .quizDescription {
         font-size: 3vw;
-    } 
+    }
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
-  
 }
