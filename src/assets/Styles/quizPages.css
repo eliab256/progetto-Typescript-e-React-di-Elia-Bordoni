@@ -63,7 +63,7 @@
     align-items: center;
     justify-content: center;
     font-size: 25px;
-    animation: blinking 2s infinite;
+    animation: blinkingError 2s infinite;
 }
 
 .noMessageError {
@@ -72,7 +72,7 @@
     height: 5%;
 }
 
-@keyframes blinking {
+@keyframes blinkingError {
     0% {
         background-color: white;
     }
