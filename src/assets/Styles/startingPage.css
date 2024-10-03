@@ -84,7 +84,8 @@
 @media only screen and (max-width: 400px) {
 
     .quizDescription{
-        font-size: clamp(12px, 14px, 16px);
+        height: 40vh;
+        font-size: 14px;
     }
 
     .planetGif img{
@@ -107,7 +108,7 @@
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
     .quizDescription{
-        font-size: 16px;
+        font-size: 3vw;
     } 
 }
 
