@@ -36,6 +36,39 @@ Now you are ready to work on it.
 
 ## 3. Usage Guide
 
+# The main components are:
+
+1. App: The main component that manages the app's state and renders the different pages.
+2. StartingPage: The initial page that presents the quiz and provides a description.
+3. QuizPages: The page that displays the quiz questions and the button to proceed to the next question.
+4. QuizCard: A component that shows a single quiz question and its corresponding answers.
+5. EndingPage: The final page that displays the quiz results and provides feedback.
+
+# Navigation in the App
+
+The navigation within the app is designed to be user-friendly and intuitive, allowing users to easily move between different sections. Here’s how the navigation works:
+StartingPage: When the app is launched, the StartingPage is displayed, introducing the topic of the quiz and providing instructions. Click the "Quiz Start" button to begin the quiz.
+QuizPages: Once the quiz starts, you will be taken to the QuizPages, where you can see the first question. Each question is accompanied by a set of multiple-choice answers. After selecting an option, click the "Next question" button to proceed to the next question. If you try to continue without selecting an option, an error message will be shown.
+EndingPage: At the end of the quiz, the EndingPage will be displayed, showing the number of correct answers and the percentage score. A congratulatory message is provided based on your performance in the quiz. You can restart the quiz by clicking the "Restart Quiz" button.
+
+# Styles and Resources
+
+All the styles in the app are managed through CSS. The images used in the quiz are located in the assets/Image folder, while the styles are found in the assets/Styles folder. Each component has its own individual CSS file.
+
+# State managment
+
+The application uses Redux to ensure centralized and scalable management of information. The project structure includes a `store` folder, which contains an `index.tsx` file for configuring the store and several slice files to manage specific states.
+store/
+├── index.tsx Redux store configuration
+├── AnswersState.ts Manages the answers provided by users, the score of correct answers, and the response status.
+├── ErrorsState.ts Management of errors when try to go ahead without give an answer
+├── QuizState.ts Management of quiz state to moving around staring, quiz and ending pages
+└── StatusState.ts Management of loading state and global errors
+
+# Props
+
+I created a dedicated file for the questions and answers that are passed via props. This file is located in the `data` folder and is called `dataQuiz`. It also includes the interface to ensure that there are no errors in the data passing.
+
 ## 5. Contributing
 
 Thank you for your interest in contributing to the Environmental Quiz App! Every contribution is valuable and helps improve the project.
@@ -66,6 +99,8 @@ Final Tips
 ## 6. License
 
 This project is licensed under the MIT License. See the [License.txt](LICENSE) file for details.
+
+## 7. Tecnologies
 
 # React + TypeScript + Vite
 
