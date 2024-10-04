@@ -1,4 +1,4 @@
-# Eco Quizz (Elia Bordoni typescript and react Project)
+# Eco Quiz App (Elia Bordoni typescript and react Project)
 
 aggiungere link qui
 
@@ -16,14 +16,56 @@ aggiungere link qui
 
 This project is an environmental and global warming themed quiz. It aims to make people more aware of this major current issue in a simple yet entertaining way. The quiz consists of 10 multiple-choice questions, each with 4 possible answers, of which only one is correct. At the end of the test, the result is shown along with a brief comment, and the option to retake the test is provided.
 
-2. Installation
+## 2. Installation
 
 This project was created using React and TypeScript with the Vite setup.
 
--   To download this, open your terminal and text "git clone https://github.com/eliab256/Progetto-HTML-e-CSS-di-Elia-Bordoni.git".
--   When you download it, you will find all the source files (src/), configuration files (vite.config.ts, tsconfig.json), and package.json, which lists the required ependencies, already included.
+-   To download this, open your terminal and text "git clone https://github.com/eliab256/progetto-Typescript-e-React-di-Elia-Bordoni.git".
+-   When you download it, you will find all the source files (src/), configuration files (vite.config.ts, tsconfig.json), and package.json,
+    which lists the required ependencies, already included.
 -   However, the actual dependencies (such as Vite, React, TypeScript, and other libraries) and the node_modules folder are not included and need to be generated.
     After downloading the project, you need to run npm install to install all the dependencies on your own and be able to run the project locally.
+-   Now it’s time to download the external libraries. In this project, I used Redux Toolkit and React Router DOM.
+    Redux toolkit installation: npm install @reduxjs/toolkit react-redux
+    React Router DOM installation: npm install react-router-dom
+-   Before you start working, make sure you have installed Prettier for code formatting, which will follow the guidelines found in the `.prettierrc.json` file.
+    to install prettier text this on your terminal npm install --save-dev prettier
+-   To start the development server, text: npm run dev. You will see the link to run the application, should be this http://localhost:5173/
+
+Now you are ready to work on it.
+
+## 3. Usage Guide
+
+## 5. Contributing
+
+Thank you for your interest in contributing to the Environmental Quiz App! Every contribution is valuable and helps improve the project.
+There are various ways you can contribute:
+
+-   Bug Fixes: If you find a bug, feel free to submit a fix.
+-   Adding New Features: Propose new features or improvements.
+-   Documentation: Help improve the documentation by writing guides or enhancing existing ones.
+-   Translations: Contribute by translating the app into other languages.
+-   Testing and Refactoring: Run tests on the code and suggest improvements.
+    How to Submit a Contribution
+    Fork the repository: Click the "Fork" button in the upper right corner to create a copy of the repository in your GitHub account.
+-   Clone your fork: git clone https://github.com/eliab256/progetto-Typescript-e-React-di-Elia-Bordoni.git
+-   Create a Branch: git checkout -b branch-name
+-   Make your change and test: npm test
+-   Add and commit your change:
+    git add .
+    git commit -m "Descrizione delle modifiche
+-   Send your branch to the fork: git push origin nome-branch
+-   Create a pull request
+
+Final Tips
+
+-   Clarity: Ensure that the instructions are clear and easy to follow.
+-   Test the Process: If possible, test the contribution process from an external perspective to ensure it flows smoothly.
+-   Keep It Updated: Update this section if the guidelines change or if the project evolves.
+
+## 6. License
+
+This project is licensed under the MIT License. See the [License.txt](LICENSE) file for details.
 
 # React + TypeScript + Vite
 
