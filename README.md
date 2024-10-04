@@ -2,7 +2,7 @@
 
 aggiungere link qui
 
-## Indice
+# Indice
 
 1. Description
 2. Installation
@@ -12,11 +12,11 @@ aggiungere link qui
 6. License
 7. Tecnologies
 
-## 1. Description
+# 1. Description
 
 This project is an environmental and global warming themed quiz. It aims to make people more aware of this major current issue in a simple yet entertaining way. The quiz consists of 10 multiple-choice questions, each with 4 possible answers, of which only one is correct. At the end of the test, the result is shown along with a brief comment, and the option to retake the test is provided.
 
-## 2. Installation
+# 2. Installation
 
 This project was created using React and TypeScript with the Vite setup.
 
@@ -34,9 +34,9 @@ This project was created using React and TypeScript with the Vite setup.
 
 Now you are ready to work on it.
 
-## 3. Usage Guide
+# 3. Usage Guide
 
-# The main components are:
+## The main components are:
 
 1. App: The main component that manages the app's state and renders the different pages.
 2. StartingPage: The initial page that presents the quiz and provides a description.
@@ -44,18 +44,18 @@ Now you are ready to work on it.
 4. QuizCard: A component that shows a single quiz question and its corresponding answers.
 5. EndingPage: The final page that displays the quiz results and provides feedback.
 
-# Navigation in the App
+## Navigation in the App
 
 The navigation within the app is designed to be user-friendly and intuitive, allowing users to easily move between different sections. Here’s how the navigation works:
 StartingPage: When the app is launched, the StartingPage is displayed, introducing the topic of the quiz and providing instructions. Click the "Quiz Start" button to begin the quiz.
 QuizPages: Once the quiz starts, you will be taken to the QuizPages, where you can see the first question. Each question is accompanied by a set of multiple-choice answers. After selecting an option, click the "Next question" button to proceed to the next question. If you try to continue without selecting an option, an error message will be shown.
 EndingPage: At the end of the quiz, the EndingPage will be displayed, showing the number of correct answers and the percentage score. A congratulatory message is provided based on your performance in the quiz. You can restart the quiz by clicking the "Restart Quiz" button.
 
-# Styles and Resources
+## Styles and Resources
 
 All the styles in the app are managed through CSS. The images used in the quiz are located in the assets/Image folder, while the styles are found in the assets/Styles folder. Each component has its own individual CSS file.
 
-# State managment
+## State managment
 
 The application uses Redux to ensure centralized and scalable management of information. The project structure includes a `store` folder, which contains an `index.tsx` file for configuring the store and several slice files to manage specific states.
 store/
@@ -65,11 +65,11 @@ store/
 ├── QuizState.ts Management of quiz state to moving around staring, quiz and ending pages
 └── StatusState.ts Management of loading state and global errors
 
-# Props
+## Props
 
 I created a dedicated file for the questions and answers that are passed via props. This file is located in the `data` folder and is called `dataQuiz`. It also includes the interface to ensure that there are no errors in the data passing.
 
-## 5. Contributing
+# 5. Contributing
 
 Thank you for your interest in contributing to the Environmental Quiz App! Every contribution is valuable and helps improve the project.
 There are various ways you can contribute:
@@ -96,13 +96,13 @@ Final Tips
 -   Test the Process: If possible, test the contribution process from an external perspective to ensure it flows smoothly.
 -   Keep It Updated: Update this section if the guidelines change or if the project evolves.
 
-## 6. License
+# 6. License
 
 This project is licensed under the MIT License. See the [License.txt](LICENSE) file for details.
 
-## 7. Tecnologies
+# 7. Tecnologies
 
-# React + TypeScript + Vite
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
