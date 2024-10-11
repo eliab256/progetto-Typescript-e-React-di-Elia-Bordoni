@@ -51,8 +51,8 @@
 
 .planetGif img {
     height: 120%;
+    width: 100%;
     object-fit: contain;
-    margin-left: -35px;
 }
 
 .startButton {
