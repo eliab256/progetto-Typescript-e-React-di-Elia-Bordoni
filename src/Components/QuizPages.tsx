@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../Store';
 
 import '../assets/Styles/quizPages.css';
-import quizData, { NumberOfQuestions } from '../Data/DataQuiz';
+import quizData, { NumberOfQuestions } from '../Data/Data-Quiz';
 import QuizCard from './QuizCard';
 import { endQuiz, questionNumber } from '../Store/QuizState';
 import { nextQuestion } from '../Store/AnswersState';

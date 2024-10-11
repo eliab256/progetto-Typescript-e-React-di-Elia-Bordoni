@@ -1,6 +1,6 @@
 # Eco Quiz App (Elia Bordoni typescript and react Project)
 
-aggiungere link qui
+Project is deployed here -> [Eco Quizz App](https://ecoquizapp.netlify.app)
 
 # Indice
 
@@ -20,19 +20,96 @@ This project is an environmental and global warming themed quiz. It aims to make
 
 This project was created using React and TypeScript with the Vite setup.
 
--   To download this, open your terminal and text "git clone https://github.com/eliab256/progetto-Typescript-e-React-di-Elia-Bordoni.git".
--   When you download it, you will find all the source files (src/), configuration files (vite.config.ts, tsconfig.json), and package.json,
-    which lists the required ependencies, already included.
--   However, the actual dependencies (such as Vite, React, TypeScript, and other libraries) and the node_modules folder are not included and need to be generated.
-    After downloading the project, you need to run npm install to install all the dependencies on your own and be able to run the project locally.
--   Now it’s time to download the external libraries. In this project, I used Redux Toolkit and React Router DOM.
-    Redux toolkit installation: npm install @reduxjs/toolkit react-redux
-    React Router DOM installation: npm install react-router-dom
--   Before you start working, make sure you have installed Prettier for code formatting, which will follow the guidelines found in the `.prettierrc.json` file.
-    to install prettier text this on your terminal npm install --save-dev prettier
--   To start the development server, text: npm run dev. You will see the link to run the application, should be this http://localhost:5173/
+### Prerequisites
 
-Now you are ready to work on it.
+-   **npm** (or **yarn**)
+
+### Steps
+
+1.  **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/eliab256/progetto-Typescript-e-React-di-Elia-Bordoni.git
+    ```
+
+2.  **Navigate into the project directory**:
+
+    ```bash
+    cd progetto-Typescript-e-React-di-Elia-Bordoni
+    ```
+
+3.  **Install the dependencies**:
+
+    Using npm:
+
+    ```bash
+    npm install
+    ```
+
+    Using yarn:
+
+    ```bash
+    yarn install
+    ```
+
+4.  **Install external libraries**
+
+    **_redux toolkit_**
+    Using npm:
+
+        ```bash
+        npm install @reduxjs/toolkit react-redux
+        ```
+
+    Using yarn:
+
+        ```bash
+        yarn add @reduxjs/toolkit react-redux
+        ```
+
+    **_react router DOM_**
+    Using npm:
+
+        ```bash
+        npm install react-router-dom
+        ```
+
+    Using yarn:
+
+        ```bash
+        yarn add react-router-dom
+        ```
+
+5.  **Run the project**:
+
+    Using npm:
+
+    ```bash
+    npm start
+    ```
+
+    Using yarn:
+
+    ```bash
+    yarn start
+    ```
+
+6.  **install code formatter (optional)**:
+
+    Using npm:
+
+    ```bash
+    npm install --save-dev prettier
+    ```
+
+    Using yarn:
+
+    ```bash
+    yarn add --dev prettier
+
+    ```
+
+    Now you are ready to work on it.
 
 # 3. Usage Guide
 

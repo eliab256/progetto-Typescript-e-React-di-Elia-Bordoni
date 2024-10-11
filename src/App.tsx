@@ -11,8 +11,8 @@ import { useEffect } from 'react';
 import { resetStatus } from './Store/StatusState';
 
 function App() {
-    const StartingQuiz = useSelector((state: RootState) => state.quizState.quizIsStarted);
-    const EndingQuiz = useSelector((state: RootState) => state.quizState.quizIsEnded);
+    const startingQuiz = useSelector((state: RootState) => state.quizState.quizIsStarted);
+    const endingQuiz = useSelector((state: RootState) => state.quizState.quizIsEnded);
     const error = useSelector((state: RootState) => state.StatusState.error);
     const isLoading = useSelector((state: RootState) => state.StatusState.isLoading);
 
@@ -28,11 +28,11 @@ function App() {
     const renderPage = (): JSX.Element | null => {
         if (isLoading) {
             return <p className="loadingMessage">Wait a moment, page is currently loading</p>;
-        } else if (!StartingQuiz && !EndingQuiz) {
+        } else if (!startingQuiz && !endingQuiz) {
             return <StartingPage />;
-        } else if (StartingQuiz && !EndingQuiz) {
+        } else if (startingQuiz && !endingQuiz) {
             return <QuizPages />;
-        } else if (StartingQuiz && EndingQuiz) {
+        } else if (startingQuiz && endingQuiz) {
             return <EndingPage />;
         }
         return null;

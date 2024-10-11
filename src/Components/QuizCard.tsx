@@ -1,4 +1,4 @@
-import { QuizData } from '../Data/DataQuiz';
+import { QuizData } from '../Data/Data-Quiz';
 import { useSelector } from 'react-redux';
 import { RootState } from '../Store';
 import { useDispatch } from 'react-redux';
@@ -25,18 +25,20 @@ const QuizCard: React.FC<QuizCardProps> = ({ quiz }) => {
         dispatch(setSelectedAnswer(index));
         const selectedAnswer = quiz.answers[index];
 
-        if (selectedAnswer.correct && !isQuestionAnswered) {
-            dispatch(rightAnswer());
+        if (!isQuestionAnswered) {
             dispatch(newAnswer());
-        } else if (selectedAnswer.correct && isQuestionAnswered) {
-            if (!isPrevAnswerCorrect) {
+            if (selectedAnswer.correct) {
                 dispatch(rightAnswer());
             }
-        } else if (!selectedAnswer.correct && !isQuestionAnswered) {
-            dispatch(newAnswer());
-        } else if (!selectedAnswer.correct && isQuestionAnswered) {
-            if (isPrevAnswerCorrect) {
-                dispatch(wrongAnswerChange());
+        } else {
+            if (selectedAnswer.correct) {
+                if (!isPrevAnswerCorrect) {
+                    dispatch(rightAnswer());
+                }
+            } else {
+                if (isPrevAnswerCorrect) {
+                    dispatch(wrongAnswerChange());
+                }
             }
         }
 
