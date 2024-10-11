@@ -5,12 +5,11 @@
 }
 
 .loadingBar {
+    margin-top: 5px;
     height: 1vh;
     width: 100%;
     background-color: white;
-    border-bottom: solid 2px blue;
-    border-left: solid 2px blue;
-    border-right: solid 2px blue;
+    border: solid 1px blue;
     border-radius: 20px;
 }
 
@@ -109,6 +108,7 @@
     .loadingBar {
         width: 96%;
         margin: 0 auto;
+        margin-top: 5px;
     }
 }
 
@@ -126,6 +126,7 @@
     .loadingBar {
         width: 96%;
         margin: 0 auto;
+        margin-top: 5px;
     }
 }
 
